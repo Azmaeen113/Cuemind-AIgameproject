@@ -53,3 +53,8 @@ Python otherwise.
 | `game/headless.py` | Matches without graphics |
 | `benchmark.py` | Command-line AI-vs-AI benchmark |
 | `tests/` | Focused game-rules tests |
+
+## Project deliverables
+
+The [final report](docs/CueMind_Report_final.pdf), [presentation](docs/CueMind_Presentation.pptx),
+benchmark data, screenshots and demo videos are collected under [docs/](docs/README.md).
