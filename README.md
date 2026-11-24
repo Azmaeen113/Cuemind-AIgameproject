@@ -1,26 +1,45 @@
-# CueMind: AI Game Core
+# CueMind: 60-Second Rack Attack Duel
 
-CueMind is an 8-ball pool game with Minimax and Monte Carlo Tree Search
-opponents. This branch contains the game rules, physics, shot planning, AI
-agents, and headless benchmark runner. The graphical client, rendering layer,
-scenes, and image assets are being contributed separately.
+CueMind is an 8-ball pool game where Minimax and Monte Carlo Tree Search
+compete on one shared table. The graphical client also supports human-vs-AI,
+AI-vs-AI, and headless benchmark matches.
 
 CSE 3210 Artificial Intelligence Lab, Department of CSE, KUET  
 Azmaeen Nur Sajin (2207113) · Masumur Rahman Fokrul (2207114)
 
-## Setup
+## Run the game
 
 ```bash
 pip install -r requirements.txt
+python main.py
 ```
 
-Run the headless benchmark:
+The first launch compiles the physics and AI kernels with numba; later launches
+start faster.
+
+## Benchmark without graphics
 
 ```bash
 python benchmark.py --a Minimax --b MCTS --games 100 --budget 0.6
 ```
 
-Run the tests:
+## Controls
+
+| Key / mouse | Action |
+|---|---|
+| Mouse | Aim |
+| Hold left button + drag away | Set power; release to shoot |
+| Right click | Cancel the stroke |
+| Arrow keys | Fine aim (Shift = faster) |
+| Up / Down, Space | Adjust power, shoot |
+| Click during ball-in-hand | Place the cue ball (green ring = legal) |
+| V | Toggle AI vision lines |
+| F | Cycle ball speed |
+| P or Esc | Pause |
+| M | Mute |
+| F11 | Fullscreen |
+
+## Tests
 
 ```bash
 python -m unittest discover -v
@@ -40,10 +59,12 @@ Python otherwise.
 | Turn | Pot a ball without a foul and you shoot again |
 | End | Table clear, or both clocks at zero. Higher score wins; ties use remaining clock |
 
-## Core code map
+## Code map
 
 | Path | Purpose |
 |---|---|
+| `main.py` | Start the graphical game |
+| `game/app.py` | Window, loading screen, and scene transitions |
 | `game/config.py` | Table dimensions, physics constants, rules, and colours |
 | `game/physics.py` | Fixed-step simulation for ball, cushion, and pocket collisions |
 | `game/rules.py` | Scoring, fouls, clocks, turns, and match state |
@@ -51,6 +72,9 @@ Python otherwise.
 | `game/planner.py` | A* run-out planner |
 | `game/agents/` | Greedy, Minimax, and MCTS agents |
 | `game/headless.py` | Matches without graphics |
+| `game/scenes/` | Menu, setup, match, results, benchmark, and how-to screens |
+| `game/render/` | Table, balls, cue, effects, sound, and UI |
+| `assets/images/` | Game artwork |
 | `benchmark.py` | Command-line AI-vs-AI benchmark |
 | `tests/` | Focused game-rules tests |
 
