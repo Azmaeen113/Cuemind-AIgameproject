@@ -7,3 +7,4 @@ __pycache__/
 venv/
 .refact/
 .vscode/
+docs/build/node_modules/

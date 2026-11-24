@@ -1,0 +1,13 @@
+{
+  "name": "cuemind-presentation",
+  "private": true,
+  "scripts": {
+    "build": "node build_presentation.js"
+  },
+  "devDependencies": {
+    "pptxgenjs": "4.0.1"
+  },
+  "overrides": {
+    "image-size": "2.0.3"
+  }
+}
