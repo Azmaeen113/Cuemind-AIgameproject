@@ -88,3 +88,8 @@ assets/images/       AI-generated art (Gemini) for menus and avatars
 * Wood, cloth, cushions, chrome pockets and the cue are painted procedurally at start-up.
 * All sounds are synthesized with numpy (no audio files).
 * Menu, setup, results and benchmark backgrounds and the robot avatars are Gemini images.
+
+## Project deliverables
+
+The [final report](docs/CueMind_Report_final.pdf), [presentation](docs/CueMind_Presentation.pptx),
+benchmark data, screenshots and demo videos are collected under [docs/](docs/README.md).
